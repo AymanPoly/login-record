@@ -104,12 +104,11 @@ const Sidebar = () => {
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
-                  ayman
+                  Hatim
                 </Typography>
                 <Typography variant="h5" color={colors.greenAccent[500]}>
-                 <br></br> Admin
+                  Admin
                 </Typography>
-               
               </Box>
 
           )}

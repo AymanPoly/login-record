@@ -1,5 +1,8 @@
+import React from "react";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import { useState } from "react";
-import { Routes, Route } from "react-router-dom";
 import Topbar from "./scenes/global/Topbar";
 import Sidebar from "./scenes/global/Sidebar";
 import Dashboard from "./scenes/dashboard";
@@ -16,12 +19,27 @@ import Payment from "./scenes/payment";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
 import Calendar from "./scenes/calendar/calendar";
+import Login from "./components/login_component";
+import SignUp from "./components/signup_component";
+import UserDetails from "./components/userDetails";
 
 function App() {
+  const isLoggedIn = window.localStorage.getItem("loggedIn");
   const [theme, colorMode] = useMode();
   const [isSidebar, setIsSidebar] = useState(true);
 
   return (
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={isLoggedIn == "true" ? <UserDetails /> : <Login />}
+          />
+          <Route path="/sign-in" element={<Login />} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/userDetails" element={  <div>
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
@@ -30,6 +48,7 @@ function App() {
           <main className="content">
             <Topbar setIsSidebar={setIsSidebar} />
             <Routes>
+              
               <Route path="/" element={<Dashboard />} />
               <Route path="/team" element={<Team />} />
               <Route path="/contacts" element={<Contacts />} />
@@ -44,10 +63,16 @@ function App() {
               <Route path="/calendar" element={<Calendar />} />
 
             </Routes>
+            
           </main>
         </div>
       </ThemeProvider>
     </ColorModeContext.Provider>
+    </div>} />
+        </Routes>
+        {/* <ImageUpload/> */}
+      </div>
+    </Router>
   );
 }
 
