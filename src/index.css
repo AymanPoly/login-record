@@ -1,90 +1,35 @@
-@import url("https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
 
-* {
-  box-sizing: border-box;
-}
-body {
-  background: #1c8ef9 !important;
-  min-height: 100vh;
-  display: flex;
-  font-weight: 400;
-  font-family: "Fira Sans", sans-serif;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-label,
-span {
-  font-weight: 500;
-  font-family: "Fira Sans", sans-serif;
-}
-
-body,
 html,
-.App,
+body,
 #root,
-.auth-wrapper {
-  width: 100%;
+.apps,
+.content {
   height: 100%;
+  width: 100%;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
-.navbar-light {
-  background-color: #ffffff;
-  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
-}
-
-.auth-wrapper {
+.apps {
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  text-align: left;
+  position: relative;
 }
 
-.auth-inner {
-  width: 450px;
-  margin: auto;
-  background: #ffffff;
-  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
-  padding: 40px 55px 45px 55px;
-  border-radius: 15px;
-  transition: all 0.3s;
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-.auth-wrapper .form-control:focus {
-  border-color: #167bff;
-  box-shadow: none;
+/* Track */
+::-webkit-scrollbar-track {
+  background: #e0e0e0;
 }
 
-.auth-wrapper h3 {
-  text-align: center;
-  margin: 0;
-  line-height: 1;
-  padding-bottom: 20px;
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
 }
 
-.custom-control-label {
-  font-weight: 400;
-}
-
-.forgot-password,
-.forgot-password a {
-  text-align: right;
-  font-size: 13px;
-  padding-top: 10px;
-  color: #7f7d7d;
-  margin: 0;
-}
-
-.forgot-password a {
-  color: #167bff;
-}
-
-table,
-th,
-td {
-  border: 1px solid black !important;
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

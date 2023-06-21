@@ -30,16 +30,45 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
+      <div className="Apps">
         <Routes>
           <Route
             exact
-            path="/"
-            element={isLoggedIn == "true" ? <UserDetails /> : <Login />}
+            path="*"
+            element={isLoggedIn == "true" ? <div>
+            <ColorModeContext.Provider value={colorMode}>
+              <ThemeProvider theme={theme}>
+                <CssBaseline />
+                <div className="apps">
+                  <Sidebar isSidebar={isSidebar} />
+                  <main className="content">
+                    <Topbar setIsSidebar={setIsSidebar} />
+                    <Routes>
+                      
+                      <Route path="/" element={<Dashboard />} />
+                      <Route path="/team" element={<Team />} />
+                      <Route path="/contacts" element={<Contacts />} />
+                      <Route path="/invoices" element={<Invoices />} />
+                      <Route path="/form" element={<Form />} />
+                      <Route path="/bar" element={<Bar />} />
+                      <Route path="/pie" element={<Pie />} />
+                      <Route path="/template" element={<Template />} />
+                      <Route path="/faq" element={<FAQ />} />
+                      <Route path="/alert" element={<Alert />} />
+                      <Route path="/payment" element={<Payment />} />
+                      <Route path="/calendar" element={<Calendar />} />
+        
+                    </Routes>
+                    
+                  </main>
+                </div>
+              </ThemeProvider>
+            </ColorModeContext.Provider>
+            </div> : <Login />}
           />
           <Route path="/sign-in" element={<Login />} />
           <Route path="/sign-up" element={<SignUp />} />
-          <Route path="/userDetails" element={  <div>
+          <Route path="/admin" element={  <div>
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
@@ -68,9 +97,11 @@ function App() {
         </div>
       </ThemeProvider>
     </ColorModeContext.Provider>
-    </div>} />
+    </div>
+  }
+   />
         </Routes>
-        {/* <ImageUpload/> */}
+     
       </div>
     </Router>
   );

@@ -229,9 +229,7 @@ const Payment = () => {
   <div class="live">
 <div class="note">
 
- 
     <img src="/signal.png" alt="Logo" style={{ width: '50px', float: 'left' }} />
-    
 </div>
 
 <div className="box">
@@ -251,22 +249,12 @@ const Payment = () => {
     <Button variant="outlined" sx={{ color: 'gray' } }>Select All</Button>
 
     <span class="arrow-down">&#9660;</span> <span class="arrow-up">&#9650;</span>
-
   </Stack>
-  
-</div>
-<TextField
-          id="outlined-multiline-static"
-          label="Multiline"
-          multiline
-          rows={4}
-          defaultValue="Default Value"
-        />
-</div>
 </div>
 
+</div>
+</div>
 <div class="mv">
-  
 <div class="note">
 
     <img src="/video-camera.png" alt="Logo" style={{ width: '50px', float: 'left' }} />
@@ -291,14 +279,6 @@ const Payment = () => {
     <span class="arrow-down">&#9660;</span> <span class="arrow-up">&#9650;</span>
   </Stack>
 </div>
-<TextField
-          id="outlined-multiline-static"
-          label="Multiline"
-          multiline
-          rows={4}
-          defaultValue="Default Value"
-        />
-
 
 </div>
 </div>
@@ -307,28 +287,19 @@ const Payment = () => {
 <h3>Adult :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   </h3>
 <div class="adult">
 
-<FormControl>
-<RadioGroup
-    aria-labelledby="demo-radio-buttons-group-label"
-    defaultValue="female"
-    name="radio-buttons-group"
-  >
+
         <FormControlLabel
           value="yes"
-          control={<Radio
-           />}
+          control={<Radio />}
           label="Yes"
 
         />
         <FormControlLabel
           value="no"
-          control={<Radio
-           />}
+          control={<Radio />}
           label="No"
-          
+
         />
-          </RadioGroup>
-        </FormControl>
 <div class="submit">
   <Button
       variant="contained"
