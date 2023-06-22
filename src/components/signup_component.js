@@ -93,8 +93,7 @@ function App() {
               <div className='mb-4'>
                 <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Subscribe to our newsletter' />
               </div>
-
-              <MDBBtn className='mb-4' size='lg'>Register</MDBBtn>
+              <button className="btn btn-dark"    >register</button>
               <p className="forgot-password text-right">
             Already registered <a href="/login-component">log in?</a>
           </p>

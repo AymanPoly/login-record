@@ -1,6 +1,24 @@
-import React, { Component, useState } from "react";
 
-export default function Login() {
+import React, { Component, useEffect, useState } from "react";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ReactPaginate from 'react-paginate';
+import { useRef } from "react";
+import {
+  MDBBtn,
+  MDBContainer,
+  MDBCard,
+  MDBCardBody,
+  MDBCardImage,
+  MDBRow,
+  MDBCol,
+  MDBIcon,
+  MDBInput
+}
+from 'mdb-react-ui-kit';
+
+function App() {
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -35,54 +53,50 @@ export default function Login() {
   }
 
   return (
-    <div className="auth-wrapper">
-      <div className="auth-inner">
-        <form onSubmit={handleSubmit}>
-          <h3>Sign In</h3>
 
-          <div className="mb-3">
-            <label>Email address</label>
-            <input
-              type="email"
-              className="form-control"
-              placeholder="Enter email"
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
+    <MDBContainer className="my-5">
 
-          <div className="mb-3">
-            <label>Password</label>
-            <input
-              type="password"
-              className="form-control"
-              placeholder="Enter password"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
+      <MDBCard>
+        <MDBRow className='g-0'>
 
-          <div className="mb-3">
-            <div className="custom-control custom-checkbox">
-              <input
-                type="checkbox"
-                className="custom-control-input"
-                id="customCheck1"
-              />
-              <label className="custom-control-label" htmlFor="customCheck1">
-                Remember me
-              </label>
-            </div>
-          </div>
+          <MDBCol md='6'>
+            <MDBCardImage src='https://st2.depositphotos.com/8065014/12038/v/600/depositphotos_120380202-stock-illustration-tv-box-iptv-icon.jpg' alt="login form" className='rounded-start w-100'/>
+          </MDBCol>
 
-          <div className="d-grid">
-            <button type="submit" className="btn btn-primary">
-              Submit
-            </button>
-          </div>
-          <p className="forgot-password text-right">
-            <a href="/sign-up">Sign Up</a>
-          </p>
-        </form>
-      </div>
-    </div>
+          <MDBCol md='6'>
+            <MDBCardBody className='d-flex flex-column'>
+            <form onSubmit={handleSubmit}>
+              <div className='d-flex flex-row mt-2'>
+                <MDBIcon fas icon="cubes fa-3x me-3" style={{ color: '#ff6219' }}/>
+                <span className="h1 fw-bold mb-0">Welcom Admin</span>
+              </div>
+
+              <h5 className="fw-normal my-4 pb-3" style={{letterSpacing: '1px'}}>Sign into your account</h5>
+
+                <MDBInput wrapperClass='mb-4' label='Email address' id='formControlLg' type='email' size="lg"
+                 onChange={(e) => setEmail(e.target.value)}/>
+                <MDBInput wrapperClass='mb-4' label='Password' id='formControlLg' type='password' size="lg"
+                 onChange={(e) => setPassword(e.target.value)}/>
+
+         <button className="btn btn-dark   "    >login</button>
+
+
+              <a className="small text-muted" href="#!">Forgot password?</a>
+              <p className="mb-5 pb-lg-2" style={{color: '#393f81'}}>Don't have an account? <a href="/sign-up" style={{color: '#393f81'}}>Register here</a></p>
+
+              <div className='d-flex flex-row justify-content-start'>
+                <a href="#!" className="small text-muted me-1">Terms of use.</a>
+                <a href="#!" className="small text-muted">Privacy policy</a>
+              </div>
+</form>
+            </MDBCardBody>
+          </MDBCol>
+
+        </MDBRow>
+      </MDBCard>
+
+    </MDBContainer>
   );
 }
+
+export default App;
